@@ -1,25 +1,30 @@
 import React from 'react'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import Movie from './pages/Movie'
 import Seatlayout from './pages/Seatlayout'
 import Favourite from './pages/Favourite'
 import MovieDetails from './pages/MovieDetails'
+import Booking from './pages/Booking'
 
 const App = () => {
+
+  const isAdminRoutes = useLocation().pathname.startsWith('/admin')
+  
   return (
    <>
     <Navbar/>
       <Routes>
        <Route path='/' element={<Home/>}/>
-       <Route path='/movie-details' element={<MovieDetails/>}/>
+       <Route path='/movie-details/:id' element={<MovieDetails/>}/>
        <Route path='/movie' element={<Movie/>}/>
-       <Route path='/seats' element={<Seatlayout/>}/>
+       <Route path='/seats/:id/:date' element={<Seatlayout/>}/>
+       <Route path='/booking' element={<Booking/>}/>
        <Route path='/favourite' elemenent= {<Favourite/>}/>
     </Routes>
-    <Footer/>
+    
    </>
   )
 }
