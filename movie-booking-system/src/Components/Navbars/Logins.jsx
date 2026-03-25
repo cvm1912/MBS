@@ -8,7 +8,6 @@ const Logins = () => {
          <SearchIcon className='h-8 w-8'/>
          <button className='text-2xl'>Login</button>
       </div>
-      <MenuIcon className='md:hidden h-8 w-8'/>
     </div>
   )
 }
