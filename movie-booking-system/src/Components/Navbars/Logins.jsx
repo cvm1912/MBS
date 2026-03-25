@@ -4,7 +4,7 @@ import React from 'react'
 const Logins = () => {
   return (
     <div className='flex gap-2'>
-      <div className='flex gap-4 sm:px-5 sm:py-2'>
+      <div className='gap-4 hidden md:flex'>
          <SearchIcon className='h-8 w-8'/>
          <button className='text-2xl'>Login</button>
       </div>
